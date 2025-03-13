@@ -9,7 +9,7 @@ public class ViewController {
 
     @GetMapping("/")
     public String home(Model model) {
-        model.addAttribute("message", "homeIcon");
+        /*model.addAttribute("message", "+");*/
         return "index";
     }
 }

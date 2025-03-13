@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <title>Antilope Restaurant Manager</title>
+    <link rel="stylesheet" th:href="@{/stylesheet/stylesheet.css}">
+    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body>
     <div class="navbar">
         <ul>
-            <li class="homeIcon" th:text="${message}"></li>
-            <li class="navTitle">Antilope</li>
-            <li class="addIcon">addIcon</li>
-            <li class="logo">antilopeLogo</li>
+            <li class="logo">
+                <img src="/images/AntilopeLogo.png" alt="AntelopeLogo"/>
+            </li>
+            <li class="navTitle">Antelope</li>
+            <li class="addIcon"><i class="fa-solid fa-square-plus"></i></li>
+
         </ul>
     </div>
     <div class="table">
