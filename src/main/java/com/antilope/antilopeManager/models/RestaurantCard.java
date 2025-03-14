@@ -1,19 +1,18 @@
 package com.antilope.antilopeManager.models;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import lombok.Builder;
-import lombok.Data;
+import jakarta.persistence.*;
+import lombok.*;
 
-@Data
+@Entity
 @Builder
+@Getter
+@Table(name = "restaurants")
 public class RestaurantCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private String name;
-    private String location;
-    private String manager;
-    private byte[] imageData;
+    public String restaurant_name;
+    public String restaurant_location;
+    private String restaurant_manager;
+    private byte[] restaurant_image;
 }

@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class ViewController {
 
-    @GetMapping("/")
+    @GetMapping("/view")
     public String home(Model model) {
         /*model.addAttribute("message", "+");*/
         return "index";

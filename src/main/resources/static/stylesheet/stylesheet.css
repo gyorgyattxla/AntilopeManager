@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -20,7 +22,7 @@
 .navbar ul {
     display: flex;
     justify-content: space-between;
-    align-items: left;
+    align-items: center;
     list-style: none;
     padding-right: 0;
     margin-left: 0;
@@ -32,28 +34,51 @@
     margin-left: 4%;
 }
 
+.navbar img {
+    display:block;
+    width: 40px;
+    height: auto;
+}
+
 .navTitle {
     font-size: 18px;
     text-transform: uppercase;
     font-weight: bold;
 }
 
-.navbar img {
-    display:block;
-    width: 20px;
-    height: auto;
+.addIcon button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 16px;
+    font-size: 16px;
+    white-space: nowrap;
+    border: none;
+    background-color: #556B2F;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-.table {
+.addIcon button i {
+    margin-right: 8px;
+}
+
+.addIcon button:hover {
+    background-color: #6B8E23;
+}
+
+.container mt-5 {
     display: flex;
-    justify-content: center;
+    justify-content: left;
     margin-top: 20px;
+    margin-left: 6%;
 }
 
 .card {
-    border: 1px solid #ccc;
+    border: none;
     padding: 10px;
-    text-align: center;
+    /*text-align: center;*/
 }
 
 footer ul {
