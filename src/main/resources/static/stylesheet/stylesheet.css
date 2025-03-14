@@ -101,10 +101,11 @@ html, body {
 .card-body button {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: left;
+    padding-left: 5%;
     margin-top: 10px;
     border: none;
-    /*background-color: #556B2F;*/
+    background-color: white;
     font-size: 18px;
     font-weight: bold;
     /*color: white;*/
@@ -112,6 +113,10 @@ html, body {
     min-height: 42px;
     min-width: 220px; /* Optional: ensure the button has a minimum width */
     cursor: pointer;
+}
+
+.card-body p {
+    padding-left: 5%;
 }
 
 footer {
