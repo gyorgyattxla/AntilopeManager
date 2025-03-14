@@ -15,4 +15,7 @@ public class RestaurantCardService {
     public List<RestaurantCard> getAllCards(){
         return restaurantCardRepository.findAll();
     }
+    public RestaurantCard findById(Long id) {
+        return restaurantCardRepository.findById(id).orElseThrow(() -> new RuntimeException("Restaurant not found"));
+    }
 }

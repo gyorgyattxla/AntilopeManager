@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <title>Antilope Restaurant Manager</title>
     <link rel="stylesheet" th:href="@{/stylesheet/stylesheet.css}">
-    <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body id="site-body">
+<body>
     <div class="navbar">
         <ul>
             <li class="logo">
                 <img src="/images/AntilopeLogo3.png" alt="AntelopeLogo"/>
             </li>
-            <li class="navTitle">Antilope</li>
+            <a class="card-title" th:href="@{'/'}"><li class="navTitle">Antilope</li></a>
             <li class="addIcon"><button><i class="fa-solid fa-square-plus"></i><span>New Restaurant</span></button></li>
 
         </ul>
@@ -23,7 +22,9 @@
             <div class="card">
                 <img th:src="@{${card.restaurant_imagepath}}" class="card-img-top" alt="Restaurant Image">
                 <div class="card-body">
-                    <button class="card-title" th:text="${card.restaurant_name}">Name Placeholder></button>
+                    <a class="card-title" th:href="@{'/' + ${card.id}}">
+                        <span th:text="${card.restaurant_name}">Name Placeholder</span>
+                    </a>
                     <p class="card-text" th:text="${card.restaurant_location}">Location Placeholder</p>
                 </div>
             </div>

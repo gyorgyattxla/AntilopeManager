@@ -10,7 +10,7 @@ import lombok.*;
 public class RestaurantCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    public long id;
     public String restaurant_name;
     public String restaurant_location;
     public String restaurant_manager;

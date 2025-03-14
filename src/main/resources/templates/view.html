@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Antilope Restaurant Manager</title>
+    <link rel="stylesheet" th:href="@{/stylesheet/stylesheet.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="navbar">
+    <ul>
+        <li class="logo">
+            <img src="/images/AntilopeLogo3.png" alt="AntelopeLogo"/>
+        </li>
+        <a class="card-title" th:href="@{'/'}"><li class="navTitle">Antilope</li></a>
+        <li class="addIcon"><button><i class="fa-solid fa-square-plus"></i><span>New Restaurant</span></button></li>
+
+    </ul>
+</div>
+<div class="view-container" th:each="card : ${restaurantCards}">
+    <!-- Left Section -->
+    <div class="left">
+        <span class="view-title" th:text="${card.restaurant_name}">Name Placeholder</span>
+        <img th:src="@{${card.restaurant_imagepath}}" class="restaurant-img" alt="Restaurant Image">
+        <button class="update-button">Update Restaurant</button>
+        <button class="delete-button">Delete Restaurant</button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right">
+        <span class="bold-text">Location: </span><span class="card-text" th:text="${card.restaurant_location}">Location Placeholder</span>
+        <span class="bold-text">Restaurant Manager: </span><span class="card-text" th:text="${card.restaurant_manager}">Manager Placeholder</span>
+        <button class="employees-button">Show Employees</button>
+    </div>
+</div>
+</body>
+<footer>
+    <ul>
+        <li>&copy; 2025 Antilope Fast Food Manager. All rights reserved.</li>
+        <li>Antilope helps you manage your restaurant operations with ease.</li>
+        <li>Stay ahead of the competition with  seamless order management and a user-friendly interface.</li>
+        <li>For support, reach out to us at <u>support@antilope.com</u> or visit our <u>Help Center.</u></li>
+        <li>Follow us for updates:
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </li>
+        <li>Designed & Developed by György Attila.</li>
+    </ul>
+</footer>
+</html>

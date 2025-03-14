@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -18,6 +19,12 @@ public class RestaurantController {
         List<RestaurantCard> restaurantCards = restaurantService.getAllCards();
         model.addAttribute("restaurantCards", restaurantCards);
         return "index";
+    }
+    @GetMapping("/{id}")
+    public String showRestaurantDetails(@PathVariable Long id, Model model) {
+        RestaurantCard restaurantCards = restaurantService.findById(id);
+        model.addAttribute("restaurantCards", restaurantCards);
+        return "view.html";
     }
 }
 
