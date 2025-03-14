@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 * {
     box-sizing: border-box;
     margin: 0;
@@ -7,6 +5,13 @@
     font-family: 'Arial', 'Helvetica', 'sans-serif';
     font-size: 16px;
     scrollbar-width: thin;
+}
+
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar {
@@ -68,21 +73,60 @@
     background-color: #6B8E23;
 }
 
-.container mt-5 {
+.container {
     display: flex;
-    justify-content: left;
+    flex-wrap: wrap;
+    justify-content: center;
     margin-top: 20px;
-    margin-left: 6%;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    /*width: 100%;*/
 }
 
 .card {
     border: none;
     padding: 10px;
-    /*text-align: center;*/
+}
+
+.card img {
+    display:block;
+    width: 400px;
+    height: auto;
+}
+
+.card-body button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+    border: none;
+    /*background-color: #556B2F;*/
+    font-size: 18px;
+    font-weight: bold;
+    /*color: white;*/
+    border-radius: 5px;
+    min-height: 42px;
+    min-width: 220px; /* Optional: ensure the button has a minimum width */
+    cursor: pointer;
+}
+
+footer {
+    height: 100%;
+    background: black;
+    margin-top: 5%;
 }
 
 footer ul {
+    color: grey;
     list-style: none;
     gap: 15px;
     margin-top: 20px;
+}
+
+footer ul a {
+    color: grey;
 }

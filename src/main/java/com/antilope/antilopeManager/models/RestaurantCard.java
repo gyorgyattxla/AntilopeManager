@@ -13,6 +13,6 @@ public class RestaurantCard {
     private long id;
     public String restaurant_name;
     public String restaurant_location;
-    private String restaurant_manager;
-    private byte[] restaurant_image;
+    public String restaurant_manager;
+    public String restaurant_imagepath;
 }

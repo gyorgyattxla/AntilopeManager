@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Didact+Gothic&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-<body>
+<body id="site-body">
     <div class="navbar">
         <ul>
             <li class="logo">
@@ -18,15 +18,13 @@
 
         </ul>
     </div>
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col-md-4" th:each="card : ${restaurantCards}">
-                <div class="card">
-                    <img src="/images/AntilopeLogo3.png" class="card-img-top" alt="Image">
-                    <div class="card-body">
-                        <h5 class="card-title" th:text="${card.restaurant_name}">Name Placeholder</h5>
-                        <p class="card-text" th:text="${card.restaurant_location}">Location Placeholder</p>
-                    </div>
+    <div class="container">
+        <div class="card-container" th:each="card : ${restaurantCards}">
+            <div class="card">
+                <img th:src="@{${card.restaurant_imagepath}}" class="card-img-top" alt="Restaurant Image">
+                <div class="card-body">
+                    <button class="card-title" th:text="${card.restaurant_name}">Name Placeholder></button>
+                    <p class="card-text" th:text="${card.restaurant_location}">Location Placeholder</p>
                 </div>
             </div>
         </div>
@@ -34,8 +32,16 @@
 </body>
 <footer>
     <ul>
-        <li>This is the footer.</li>
-        <li>Developed by György Attila.</li>
+        <li>&copy; 2025 Antilope Fast Food Manager. All rights reserved.</li>
+        <li>Antilope helps you manage your restaurant operations with ease.</li>
+        <li>Stay ahead of the competition with  seamless order management and a user-friendly interface.</li>
+        <li>For support, reach out to us at <u>support@antilope.com</u> or visit our <u>Help Center.</u></li>
+        <li>Follow us for updates:
+            <i class="fa-brands fa-facebook"></i>
+            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-instagram"></i>
+        </li>
+        <li>Designed & Developed by György Attila.</li>
     </ul>
 </footer>
 </html>
