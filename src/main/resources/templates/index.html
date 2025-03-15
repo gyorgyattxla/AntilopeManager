@@ -13,19 +13,19 @@
                 <img src="/images/AntilopeLogo3.png" alt="AntelopeLogo"/>
             </li>
             <a class="card-title" th:href="@{'/'}"><li class="navTitle">Antilope</li></a>
-            <li class="addIcon"><button><i class="fa-solid fa-square-plus"></i><span>New Restaurant</span></button></li>
+            <li class="addIcon"><a th:href="@{'/create'}"><button><i class="fa-solid fa-square-plus"></i><span>New Restaurant</span></button></a></li>
 
         </ul>
     </div>
     <div class="container">
         <div class="card-container" th:each="card : ${restaurantCards}">
             <div class="card">
-                <img th:src="@{${card.restaurant_imagepath}}" class="card-img-top" alt="Restaurant Image">
+                <img th:src="@{${card.imagepath}}" class="card-img-top" alt="Restaurant Image">
                 <div class="card-body">
                     <a class="card-title" th:href="@{'/' + ${card.id}}">
-                        <span th:text="${card.restaurant_name}">Name Placeholder</span>
+                        <span th:text="${card.name}">Name Placeholder</span>
                     </a>
-                    <p class="card-text" th:text="${card.restaurant_location}">Location Placeholder</p>
+                    <p class="card-text" th:text="${card.location}">Location Placeholder</p>
                 </div>
             </div>
         </div>

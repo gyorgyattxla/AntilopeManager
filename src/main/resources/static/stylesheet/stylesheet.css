@@ -43,6 +43,7 @@ html, body {
 
 .navbar a {
     text-decoration: none;
+    cursor: pointer;
 }
 
 .navbar img {

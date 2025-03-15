@@ -17,22 +17,22 @@
 
     </ul>
 </div>
-<div class="view-container" th:each="card : ${restaurantCards}">
-    <!-- Left Section -->
-    <div class="left">
-
-        <img th:src="@{${card.imagepath}}" class="restaurant-img" alt="Restaurant Image">
-        <button class="update-button">Update Restaurant</button>
-        <button class="delete-button">Delete Restaurant</button>
-    </div>
-
-    <!-- Right Section -->
-    <div class="right">
-        <span class="view-title" th:text="${card.name}">Name Placeholder</span>
-        <span class="bold-text">Location: </span><span class="card-text" th:text="${card.location}">Location Placeholder</span>
-        <span class="bold-text">Restaurant Manager: </span><span class="card-text" th:text="${card.manager}">Manager Placeholder</span>
-        <button class="employees-button">Show Employees</button>
-    </div>
+<div class="create-container">
+    <form th:action="@{/create}" method="post" th:object="${restaurantCard}">
+        <label>Name:</label>
+        <input type="text" th:field="*{name}" required placeholder="Enter Name"/>
+        <br>
+        <label>Location:</label>
+        <input type="email" th:field="*{location}" required placeholder="Enter Location"/>
+        <br>
+        <label>Restaurant Manager:</label>
+        <input type="text" th:field="*{manager}" required placeholder="Enter Manager's Name"/>
+        <br>
+        <label>Location:</label>
+        <input type="file" name="file" id="file" accept="image/*" required/>
+        <br>
+        <button type="submit">Submit</button>
+    </form>
 </div>
 </body>
 <footer>

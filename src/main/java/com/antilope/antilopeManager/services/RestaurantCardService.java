@@ -18,4 +18,8 @@ public class RestaurantCardService {
     public RestaurantCard findById(Long id) {
         return restaurantCardRepository.findById(id).orElseThrow(() -> new RuntimeException("Restaurant not found"));
     }
+
+    public void saveCard(RestaurantCard restaurantCard) {
+        restaurantCardRepository.save(restaurantCard);
+    }
 }
