@@ -5,8 +5,15 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class AntilopeManagerApplication {
-
-	public static void main(String[] args) {
+	private AntilopeManagerApplication() {
+		// Prevent instantiation
+	}
+	/**
+	 * The main entry point for the Antilope Manager application.
+	 *
+	 * @param args the command line arguments
+	 */
+	public static void main(final String[] args) {
 		SpringApplication.run(AntilopeManagerApplication.class, args);
 	}
 

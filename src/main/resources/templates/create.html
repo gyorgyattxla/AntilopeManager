@@ -12,30 +12,30 @@
         <li class="logo">
             <img src="/images/AntilopeLogo3.png" alt="AntelopeLogo"/>
         </li>
-        <a class="card-title" th:href="@{'/'}"><li class="navTitle">Antilope</li></a>
-        <li class="addIcon"><a th:href="@{'/create'}"><button><i class="fa-solid fa-square-plus"></i><span>New Restaurant</span></button></a></li>
+        <a class="card-title" th:href="@{'/'}"><li class="nav-title">Antilope</li></a>
+        <li class="add-icon"><a th:href="@{'/create'}"><button><i class="fa-solid fa-square-plus"></i><span>New Restaurant</span></button></a></li>
 
     </ul>
 </div>
 <div class="create-container">
-    <form th:action="@{/create}" method="post" th:object="${restaurantCard}">
+    <form th:action="@{/create}" method="post" th:object="${restaurantCard}" enctype="multipart/form-data">
         <label>Name:</label>
         <input type="text" th:field="*{name}" required placeholder="Enter Name"/>
         <br>
         <label>Location:</label>
-        <input type="email" th:field="*{location}" required placeholder="Enter Location"/>
+        <input type="text" th:field="*{location}" required placeholder="Enter Location"/>
         <br>
         <label>Restaurant Manager:</label>
         <input type="text" th:field="*{manager}" required placeholder="Enter Manager's Name"/>
         <br>
         <label>Location:</label>
-        <input type="file" name="file" id="file" accept="image/*" required/>
+        <input type="file" name="file" id="file" accept="image/*"/>
         <br>
         <button type="submit">Submit</button>
     </form>
 </div>
 </body>
-<footer>
+<footer class="footer">
     <ul>
         <li>&copy; 2025 Antilope Fast Food Manager. All rights reserved.</li>
         <li>Antilope helps you manage your restaurant operations with ease.</li>
@@ -46,7 +46,7 @@
             <i class="fa-brands fa-twitter"></i>
             <i class="fa-brands fa-instagram"></i>
         </li>
-        <li>Designed & Developed by György Attila.</li>
+        <li>Designed [  &  ]. Developed by György Attila.</li>
     </ul>
 </footer>
 </html>

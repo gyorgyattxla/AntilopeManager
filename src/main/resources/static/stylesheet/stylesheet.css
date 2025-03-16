@@ -1,237 +1,238 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Arial', 'Helvetica', 'sans-serif';
-    font-size: 16px;
-    scrollbar-width: thin;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Arial", "Helvetica", "sans-serif";
+  font-size: 16px;
+  scrollbar-width: thin;
 }
 
-html, body {
-    height: 100%;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 /***    NAVBAR      ***/
 
 .navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #556B2F;
-    width: 100%;
-    height: 80px;
-    padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #556b2f;
+  width: 100%;
+  height: 80px;
+  padding: 10px;
 }
 
 .navbar ul {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    list-style: none;
-    padding-right: 0;
-    margin-left: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  padding-right: 0;
+  margin-left: 0;
 }
 
 .navbar li {
-    color: white;
-    padding-right: 1%;
-    margin-left: 4%;
+  color: white;
+  padding-right: 1%;
+  margin-left: 4%;
 }
 
 .navbar a {
-    text-decoration: none;
-    cursor: pointer;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .navbar img {
-    display:block;
-    width: 40px;
-    height: auto;
+  display: block;
+  width: 40px;
+  height: auto;
 }
 
-.navTitle {
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: bold;
+.nav-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
-.addIcon button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 16px;
-    font-size: 16px;
-    white-space: nowrap;
-    border: none;
-    background-color: #556B2F;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
+.add-icon button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 16px;
+  font-size: 16px;
+  white-space: nowrap;
+  border: none;
+  background-color: #556b2f;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
-.addIcon button i {
-    margin-right: 8px;
+.add-icon button i {
+  margin-right: 8px;
 }
 
-.addIcon button:hover {
-    background-color: #6B8E23;
+.add-icon button:hover {
+  background-color: #6b8e23;
 }
 
 /***    INDEX.HTML      ***/
 
 .container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
 }
 
 .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
 .card {
-    border: none;
-    padding: 10px;
+  border: none;
+  padding: 10px;
 }
 
 .card img {
-    display:block;
-    width: 400px;
-    height: auto;
+  display: block;
+  width: 400px;
+  height: auto;
 }
 
 .card-body {
-    margin-top: 6px;
+  margin-top: 6px;
 }
 
 .card-body a {
-    padding-left: 5%;
-    text-decoration: none;
-    background-color: white;
-    font-size: 18px;
-    font-weight: bold;
-    min-height: 42px;
-    min-width: 220px;
-    cursor: pointer;
+  padding-left: 5%;
+  text-decoration: none;
+  background-color: white;
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 42px;
+  min-width: 220px;
+  cursor: pointer;
 }
 
 .card-body span {
-    color: black;
-    font-size: 18px;
-    font-weight: bold;
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .card-body p {
-    padding-left: 5%;
+  padding-left: 5%;
 }
 
 /***    VIEW.HTML   ***/
 
 .view-container {
-    display: flex;
+  display: flex;
 }
 
-.view-container .bold-text{
-    font-weight: bold;
+.view-container .bold-text {
+  font-weight: bold;
 }
 
-.view-title{
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: bold;
+.view-title {
+  font-size: 18px;
+  text-transform: uppercase;
+  font-weight: bold;
 }
 
 .left {
-    width: 50%; /* 50% width of the container */
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
+  width: 50%; /* 50% width of the container */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically */
 }
 
 .left img {
-    max-width: 640px;
-    height: auto;
-    margin: 10px 0px;
+  max-width: 640px;
+  height: auto;
+  margin: 10px 0px;
 }
 
 .right {
-    width: 50%;
-    padding: 0px;
-    margin-top: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: top;
-    align-items: left;
+  width: 50%;
+  padding: 0px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
 }
 
 .update-button {
-    margin: 10px 0px;
-    max-width: 640px;
-    min-height: 38px;
-    background-color: #6B8E23;
-    border-radius: 5px;
-    border: 1px solid #556B2F;
-    color: white;
-    cursor: pointer;
+  margin: 10px 0px;
+  max-width: 640px;
+  min-height: 38px;
+  background-color: #6b8e23;
+  border-radius: 5px;
+  border: 1px solid #556b2f;
+  color: white;
+  cursor: pointer;
 }
 
 .update-button:hover {
-    background-color: #556B2F;
+  background-color: #556b2f;
 }
 
 .delete-button {
-    margin: 10px 0px;
-    max-width: 640px;
-    min-height: 38px;
-    background-color: red;
-    border-radius: 5px;
-    border: 1px solid darkred;
-    color: white;
-    cursor: pointer;
+  margin: 10px 0px;
+  max-width: 640px;
+  min-height: 38px;
+  background-color: red;
+  border-radius: 5px;
+  border: 1px solid darkred;
+  color: white;
+  cursor: pointer;
 }
 
 .delete-button:hover {
-    background-color: darkred;
+  background-color: darkred;
 }
 
 .employees-button {
-    margin: 10px 0px;
-    max-width: 640px;
-    min-height: 38px;
-    background-color: #6B8E23;
-    border-radius: 5px;
-    border: 1px solid #556B2F;
-    color: white;
-    cursor: pointer;
+  margin: 10px 0px;
+  max-width: 640px;
+  min-height: 38px;
+  background-color: #6b8e23;
+  border-radius: 5px;
+  border: 1px solid #556b2f;
+  color: white;
+  cursor: pointer;
 }
 
 .employees-button:hover {
-    background-color: #556B2F;
+  background-color: #556b2f;
 }
 
 /***    FOOTER      ***/
 
-footer {
-    height: 100%;
-    background: black;
-    margin-top: 5%;
+.footer {
+  height: 100%;
+  background: black;
+  margin-top: 5%;
 }
 
-footer ul {
-    color: grey;
-    list-style: none;
-    gap: 15px;
-    margin-top: 20px;
-    padding-left: 1%;
+.footer ul {
+  color: grey;
+  list-style: none;
+  gap: 15px;
+  margin-top: 20px;
+  padding-left: 1%;
 }
 
-footer ul a {
-    color: grey;
+.footer ul a {
+  color: grey;
 }
