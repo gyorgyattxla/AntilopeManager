@@ -20,11 +20,11 @@ import lombok.NoArgsConstructor;
 public class RestaurantCard {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public long id;
-    public String name;
-    public String location;
-    public String manager;
-    public String imagepath;
+    private long id;
+    private String name;
+    private String location;
+    private String manager;
+    private String imagepath;
 
     public long getId() {
         return id;

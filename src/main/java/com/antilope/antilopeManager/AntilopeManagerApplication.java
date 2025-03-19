@@ -5,9 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class AntilopeManagerApplication {
-	private AntilopeManagerApplication() {
-		// Prevent instantiation
-	}
 	/**
 	 * The main entry point for the Antilope Manager application.
 	 *

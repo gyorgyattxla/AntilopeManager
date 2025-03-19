@@ -21,16 +21,16 @@
     <!-- Left Section -->
     <div class="left">
 
-        <img th:src="@{${card.imagepath}}" class="restaurant-img" alt="Restaurant Image">
+        <img th:src="@{${card.getImagepath}}" class="restaurant-img" alt="Restaurant Image">
         <button class="update-button">Update Restaurant</button>
         <button class="delete-button">Delete Restaurant</button>
     </div>
 
     <!-- Right Section -->
     <div class="right">
-        <span class="view-title" th:text="${card.name}">Name Placeholder</span>
-        <span class="bold-text">Location: </span><span class="card-text" th:text="${card.location}">Location Placeholder</span>
-        <span class="bold-text">Restaurant Manager: </span><span class="card-text" th:text="${card.manager}">Manager Placeholder</span>
+        <span class="view-title" th:text="${card.getName}">Name Placeholder</span>
+        <span class="bold-text">Location: </span><span class="card-text" th:text="${card.getLocation}">Location Placeholder</span>
+        <span class="bold-text">Restaurant Manager: </span><span class="card-text" th:text="${card.getManager}">Manager Placeholder</span>
         <button class="employees-button">Show Employees</button>
     </div>
 </div>
