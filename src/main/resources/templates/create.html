@@ -19,19 +19,25 @@
 </div>
 <div class="create-container">
     <form th:action="@{/create}" method="post" th:object="${restaurantCard}" enctype="multipart/form-data">
-        <label>Name:</label>
-        <input type="text" th:field="*{name}" required placeholder="Enter Name"/>
-        <br>
-        <label>Location:</label>
-        <input type="text" th:field="*{location}" required placeholder="Enter Location"/>
-        <br>
-        <label>Restaurant Manager:</label>
-        <input type="text" th:field="*{manager}" required placeholder="Enter Manager's Name"/>
-        <br>
-        <label>Location:</label>
-        <input type="file" name="file" id="file" accept="image/*"/>
-        <br>
-        <button type="submit">Submit</button>
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" required placeholder="Enter Name"/>
+        </div>
+        <div>
+            <label>Location:</label>
+            <input type="text" th:field="*{location}" required placeholder="Enter Location"/>
+        </div>
+        <div>
+            <label>Restaurant Manager:</label>
+            <input type="text" th:field="*{manager}" required placeholder="Enter Manager's Name"/>
+        </div>
+        <div>
+            <label>Image:</label>
+            <input type="file" name="file" id="file" accept="image/*"/>
+        </div>
+        <div>
+            <button class="create-button" type="submit">Submit</button>
+        </div>
     </form>
 </div>
 </body>
@@ -46,7 +52,7 @@
             <i class="fa-brands fa-twitter"></i>
             <i class="fa-brands fa-instagram"></i>
         </li>
-        <li>Designed [  &  ]. Developed by György Attila.</li>
+        <li>Designed & Developed by György Attila.</li>
     </ul>
 </footer>
 </html>

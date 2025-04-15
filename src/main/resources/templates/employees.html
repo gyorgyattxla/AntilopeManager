@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Antilope Restaurant Manager</title>
+    <link rel="stylesheet" th:href="@{/stylesheet/stylesheet.css}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+<div class="navbar">
+    <ul>
+        <li class="logo">
+            <img src="/images/AntilopeLogo3.png" alt="AntelopeLogo"/>
+        </li>
+        <a class="card-title" th:href="@{'/'}"><li class="nav-title">Antilope</li></a>
+        <li class="add-icon"><a th:href="@{'/create'}"><button><i class="fa-solid fa-square-plus"></i><span>New Restaurant</span></button></a></li>
+
+    </ul>
+</div>
+<div class="container">
+    <div class="title">
+        <span th:text="Employees in {restaurant.name}:"></span>
+    </div>
+    <div class="employee-list" th:each="employee : {employees}">
+        <div class="employee-row">
+            <span th:text="employee.name"></span>
+            <span th:text="employee.position"></span>
+            <span th:text="employee.employmenttime"></span>
+        </div>
+    </div>
+</div>
+</body>
+</html>

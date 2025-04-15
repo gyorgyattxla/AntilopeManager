@@ -187,6 +187,10 @@ body {
   background-color: #556b2f;
 }
 
+.delete-button-container{
+  width: 100%;
+}
+
 .delete-button {
   margin: 10px 0px;
   max-width: 640px;
@@ -196,6 +200,7 @@ body {
   border: 1px solid darkred;
   color: white;
   cursor: pointer;
+  width: 100%;
 }
 
 .delete-button:hover {
@@ -214,6 +219,32 @@ body {
 }
 
 .employees-button:hover {
+  background-color: #556b2f;
+}
+
+/***    CREATE      ***/
+
+.create-container {
+    display: flex;
+    justify-content: center;  /* This centers the content horizontally */
+    margin: 100px 0px;
+}
+
+.create-container div {
+    width: 200px;  /* Set a width to control the inner content's size */
+    margin-top: 20px;  /* Adds some top space */
+}
+
+.create-container div .create-button {
+    width: 100%;
+    background-color: #6b8e23;
+    border-radius: 5px;
+    border: 1px solid #556b2f;
+    color: white;
+    cursor: pointer;
+}
+
+.create-button:hover {
   background-color: #556b2f;
 }
 

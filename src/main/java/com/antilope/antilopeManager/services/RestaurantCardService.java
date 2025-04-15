@@ -3,7 +3,7 @@ package com.antilope.antilopeManager.services;
 import com.antilope.antilopeManager.models.RestaurantCard;
 import com.antilope.antilopeManager.repositories.RestaurantCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.query.Param;
+/*import org.springframework.data.repository.query.Param;*/
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -22,5 +22,9 @@ public class RestaurantCardService {
 
     public void saveCard(RestaurantCard restaurantCard) {
         restaurantCardRepository.save(restaurantCard);
+    }
+
+    public void deleteCard(RestaurantCard restaurantCard){
+        restaurantCardRepository.delete(restaurantCard);
     }
 }

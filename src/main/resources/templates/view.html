@@ -23,7 +23,9 @@
 
         <img th:src="@{${card.getImagepath}}" class="restaurant-img" alt="Restaurant Image">
         <button class="update-button">Update Restaurant</button>
-        <button class="delete-button">Delete Restaurant</button>
+        <form class="delete-button-container" th:action="@{'/' + ${card.id} + '/delete'}" method="post">
+            <button type="submit" class="delete-button">Delete Restaurant</button>
+        </form>
     </div>
 
     <!-- Right Section -->
@@ -46,7 +48,7 @@
             <i class="fa-brands fa-twitter"></i>
             <i class="fa-brands fa-instagram"></i>
         </li>
-        <li>Designed [  &  ]. Developed by György Attila.</li>
+        <li>Designed & Developed by György Attila.</li>
     </ul>
 </footer>
 </html>

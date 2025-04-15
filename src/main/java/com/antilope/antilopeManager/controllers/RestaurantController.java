@@ -20,13 +20,13 @@ public final class RestaurantController {
     @Autowired
     private RestaurantCardService restaurantService;
 
-    private static String UPLOAD_DIR = "src/main/resources/static/images/";
+    private static final String UPLOAD_DIR = "src/main/resources/static/images/";
 
     @GetMapping("/")
     public String showRestaurantCards(Model model) {
         List<RestaurantCard> restaurantCards = restaurantService.getAllCards();
         model.addAttribute("restaurantCards", restaurantCards);
-        return "index";
+        return "index.html";
     }
     @GetMapping("/{id}")
     public String showRestaurantDetails(@PathVariable Long id, Model model) {
@@ -61,9 +61,16 @@ public final class RestaurantController {
             }
         }
         else {
-            restaurantCard.setImagepath("/images/missing_img.png");
+            restaurantCard.setImagepath("/images/missing_img2.png");
             restaurantService.saveCard(restaurantCard);
         }
+        return "redirect:/";
+    }
+
+    @PostMapping("/{id}/delete")
+    public String deleteRestaurant(@PathVariable Long id, Model model){
+        RestaurantCard restaurantCard = restaurantService.findById(id);
+        restaurantService.deleteCard(restaurantCard);
         return "redirect:/";
     }
 }

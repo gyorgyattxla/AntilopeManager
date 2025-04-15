@@ -25,5 +25,5 @@ public class Employees {
     /* The working position of the employee. */
     private String position;
     /* The number of years the employee has been working at the restaurant. */
-    private int e_time;
+    private int employmenttime;
 }
