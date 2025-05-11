@@ -9,7 +9,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.File;
 import java.io.IOException;
@@ -17,7 +16,6 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.List;
-import java.util.UUID;
 
 @Controller
 public final class RestaurantController {
@@ -28,7 +26,8 @@ public final class RestaurantController {
     @Autowired
     private EmployeeService employeeService;
 
-    private static final String UPLOAD_DIR = "src/main/resources/static/images/";
+    private static final String
+            UPLOAD_DIR = "src/main/resources/static/images/";
 
     @GetMapping("/")
     public String showRestaurantCards(Model model) {
@@ -41,13 +40,14 @@ public final class RestaurantController {
         RestaurantCard restaurantCards = restaurantService.findById(id);
         model.addAttribute("restaurantCards", restaurantCards);
 
-        List<Employees> employees = employeeService.getEmployeesByRestaurant(restaurantCards);
+        List<Employees> employees =
+                employeeService.getEmployeesByRestaurant(restaurantCards);
         model.addAttribute("employees", employees);
 
         return "view.html";
     }
     @GetMapping("/create")
-    public String showRestaurantCreation(Model model){
+    public String showRestaurantCreation(Model model) {
         model.addAttribute("restaurantCard", new RestaurantCard());
         return "create.html";
     }
@@ -59,20 +59,22 @@ public final class RestaurantController {
             String fileName = file.getOriginalFilename();
             try {
                 File directory = new File(UPLOAD_DIR);
-                if (!directory.exists()){
+                if (!directory.exists()) {
                     directory.mkdirs();
                 }
-                Files.copy(file.getInputStream(), Paths.get(UPLOAD_DIR + fileName), StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(file.getInputStream(),
+                        Paths.get(UPLOAD_DIR + fileName),
+                        StandardCopyOption.REPLACE_EXISTING);
 
                 String relativePath = "/images/" + fileName;
                 restaurantCard.setImagepath(relativePath);
 
                 restaurantService.saveCard(restaurantCard);
             } catch (IOException e) {
-                model.addAttribute("message", "Restaurant creation failed: " + e.getMessage());
+                model.addAttribute("message",
+                        "Restaurant creation failed: " + e.getMessage());
             }
-        }
-        else {
+        } else {
             restaurantCard.setImagepath("/images/missing_img2.png");
             restaurantService.saveCard(restaurantCard);
         }
@@ -89,17 +91,20 @@ public final class RestaurantController {
 
     @PostMapping("/update/{id}")
     public String updateRestaurant(@PathVariable Long id,
-                                   @ModelAttribute RestaurantCard restaurantCard,
+                                   @ModelAttribute RestaurantCard
+                                           restaurantCard,
                                    @RequestParam("file") MultipartFile file,
                                    Model model) {
         try {
             if (!file.isEmpty()) {
                 String fileName = file.getOriginalFilename();
                 File directory = new File(UPLOAD_DIR);
-                if (!directory.exists()){
+                if (!directory.exists()) {
                     directory.mkdirs();
                 }
-                Files.copy(file.getInputStream(), Paths.get(UPLOAD_DIR + fileName), StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(file.getInputStream(),
+                        Paths.get(UPLOAD_DIR + fileName),
+                        StandardCopyOption.REPLACE_EXISTING);
 
                 String relativePath = "/images/" + fileName;
                 restaurantCard.setImagepath(relativePath);
@@ -110,7 +115,6 @@ public final class RestaurantController {
             return "redirect:/";
         } catch (IOException e) {
             model.addAttribute("message", "Update failed: " + e.getMessage());
-            System.out.println("UPDATE NO WORK UPDATE NO WORK UPDATE NO WORK UPDATE NO WORK");
             return "update.html";
         }
     }
@@ -118,7 +122,7 @@ public final class RestaurantController {
 
 
     @PostMapping("/{id}/delete")
-    public String deleteRestaurant(@PathVariable Long id, Model model){
+    public String deleteRestaurant(@PathVariable Long id, Model model) {
         RestaurantCard restaurantCard = restaurantService.findById(id);
         restaurantService.deleteCard(restaurantCard);
         return "redirect:/";

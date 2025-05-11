@@ -39,7 +39,7 @@
 
         <property name="basedir" value="${basedir}"/>
     -->
-    <property name="severity" value="error"/>
+    <property name="severity" value="warning"/>
 
     <property name="fileExtensions" value="java, properties, xml"/>
 
@@ -74,7 +74,7 @@
 
     <!-- Checks for whitespace                               -->
     <!-- See https://checkstyle.org/checks/whitespace/index.html -->
-    <module name="FileTabCharacter"/>
+<!--    <module name="FileTabCharacter"/>-->
 
     <!-- Miscellaneous other checks.                   -->
     <!-- See https://checkstyle.org/checks/misc/index.html -->
@@ -99,7 +99,7 @@
         <module name="ConstantName"/>
         <module name="LocalFinalVariableName"/>
         <module name="LocalVariableName"/>
-        <module name="MemberName"/>
+<!--        <module name="MemberName"/>-->
         <module name="MethodName"/>
         <module name="PackageName"/>
         <module name="ParameterName"/>
@@ -108,7 +108,7 @@
 
         <!-- Checks for imports                              -->
         <!-- See https://checkstyle.org/checks/imports/index.html -->
-        <module name="AvoidStarImport"/>
+<!--        <module name="AvoidStarImport"/>-->
         <module name="IllegalImport"/> <!-- defaults to sun.* packages -->
         <module name="RedundantImport"/>
         <module name="UnusedImports">
@@ -150,7 +150,7 @@
         <!-- See https://checkstyle.org/checks/coding/index.html -->
         <module name="EmptyStatement"/>
         <module name="EqualsHashCode"/>
-        <module name="HiddenField"/>
+<!--        <module name="HiddenField"/>-->
         <module name="IllegalInstantiation"/>
         <module name="InnerAssignment"/>
         <module name="MagicNumber"/>

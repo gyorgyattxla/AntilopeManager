@@ -18,7 +18,8 @@ public class EmployeeService {
         this.employeesRepository = employeesRepository;
     }
 
-    public List<Employees> getEmployeesByRestaurant(RestaurantCard restaurantCard) {
+    public List<Employees> getEmployeesByRestaurant(RestaurantCard
+                                                            restaurantCard) {
         return employeesRepository.findByRestaurantCard(restaurantCard);
     }
 }
