@@ -172,6 +172,10 @@ body {
   align-items: left;
 }
 
+.update-button-container{
+  width: 100%;
+}
+
 .update-button {
   margin: 10px 0px;
   max-width: 640px;
@@ -181,6 +185,7 @@ body {
   border: 1px solid #556b2f;
   color: white;
   cursor: pointer;
+  width: 100%;
 }
 
 .update-button:hover {
@@ -207,19 +212,8 @@ body {
   background-color: darkred;
 }
 
-.employees-button {
-  margin: 10px 0px;
-  max-width: 640px;
-  min-height: 38px;
-  background-color: #6b8e23;
-  border-radius: 5px;
-  border: 1px solid #556b2f;
-  color: white;
-  cursor: pointer;
-}
-
-.employees-button:hover {
-  background-color: #556b2f;
+.employee-list li {
+    margin-bottom: 12px;
 }
 
 /***    CREATE      ***/

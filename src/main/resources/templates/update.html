@@ -18,7 +18,7 @@
     </ul>
 </div>
 <div class="create-container">
-    <form th:action="@{/create}" method="post" th:object="${restaurantCard}" enctype="multipart/form-data">
+    <form th:action="@{'/update/' + ${restaurantCard.id}}" th:object="${restaurantCard}" method="post" enctype="multipart/form-data">
         <div>
             <label>Name:</label>
             <input type="text" th:field="*{name}" required placeholder="Enter Name"/>
@@ -39,6 +39,8 @@
             <button class="create-button" type="submit">Submit</button>
         </div>
     </form>
+
+
 </div>
 </body>
 <footer class="footer">

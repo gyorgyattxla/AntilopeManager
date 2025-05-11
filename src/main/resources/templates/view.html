@@ -10,7 +10,7 @@
 <div class="navbar">
     <ul>
         <li class="logo">
-            <img src="/images/AntilopeLogo3.png" alt="AntelopeLogo"/>
+            <img src="/images/AntilopeLogo3.png" alt="AntilopeLogo"/>
         </li>
         <a class="card-title" th:href="@{'/'}"><li class="nav-title">Antilope</li></a>
         <li class="add-icon"><a th:href="@{'/create'}"><button><i class="fa-solid fa-square-plus"></i><span>New Restaurant</span></button></a></li>
@@ -22,7 +22,9 @@
     <div class="left">
 
         <img th:src="@{${card.getImagepath}}" class="restaurant-img" alt="Restaurant Image">
-        <button class="update-button">Update Restaurant</button>
+        <form class="update-button-container" th:action="@{'/update/' + ${card.id}}" method="get">
+            <button class="update-button">Update Restaurant</button>
+        </form>
         <form class="delete-button-container" th:action="@{'/' + ${card.id} + '/delete'}" method="post">
             <button type="submit" class="delete-button">Delete Restaurant</button>
         </form>
@@ -33,7 +35,21 @@
         <span class="view-title" th:text="${card.getName}">Name Placeholder</span>
         <span class="bold-text">Location: </span><span class="card-text" th:text="${card.getLocation}">Location Placeholder</span>
         <span class="bold-text">Restaurant Manager: </span><span class="card-text" th:text="${card.getManager}">Manager Placeholder</span>
-        <button class="employees-button">Show Employees</button>
+        <br><h2>Employees:</h2><br>
+        <ul>
+            <th:block th:if="${not #lists.isEmpty(employees)}">
+                <ul class="employee-list">
+                    <li th:each="employee : ${employees}">
+                        <p><strong>Name:</strong> <span th:text="${employee.name}"></span></p>
+                        <p><strong>Position:</strong> <span th:text="${employee.position}"></span></p>
+                        <p><strong>Employment Time:</strong> <span th:text="${employee.employment_time}"></span> years</p>
+                    </li>
+                </ul>
+            </th:block>
+            <th:block th:if="${#lists.isEmpty(employees)}">
+                <p>No employees listed for this restaurant.</p>
+            </th:block>
+        </ul>
     </div>
 </div>
 </body>
