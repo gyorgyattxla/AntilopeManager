@@ -27,3 +27,9 @@ jobs:
 
       - name: Run Tests
         run: mvn test
+
+      - name: Upload packaged code
+        uses: actions/upload-artifact@v4
+        with:
+          name: app-jar
+          path: target/antilopeManager-0.0.1-SNAPSHOT.jar
